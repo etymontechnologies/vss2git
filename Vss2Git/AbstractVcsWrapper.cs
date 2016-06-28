@@ -384,6 +384,13 @@ namespace Hpdi.Vss2Git
 
         private void FailExitCode(string exec, string args, string stdout, string stderr, int exitCode)
         {
+			//skip .gitignore warning
+			if (exitCode == 1)
+			{
+				logger.WriteLine(stderr);
+				return;
+			}
+
             throw new ProcessExitException(
                 string.Format(vcs + " returned exit code {0}", exitCode),
                 exec, args, stdout, stderr);

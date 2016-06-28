@@ -33,7 +33,7 @@ namespace Hpdi.Vss2Git
     /// <author>Trevor Robinson</author>
     class VcsExporter : Worker
     {
-        private const string DefaultComment = "--empty comment--";
+        private string defaultComment = "--empty comment--";
 
         private readonly VssDatabase database;
         private readonly RevisionAnalyzer revisionAnalyzer;
@@ -42,6 +42,12 @@ namespace Hpdi.Vss2Git
         private readonly IDictionary<string, string> emailDictionary;
         private readonly StreamCopier streamCopier = new StreamCopier();
         private readonly HashSet<string> tagsUsed = new HashSet<string>();
+
+		public string DefaultComment
+		{
+			get { return defaultComment; }
+			set { defaultComment = value; }
+		}
 
         private string emailDomain = "localhost";
         public string EmailDomain

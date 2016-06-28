@@ -65,5 +65,8 @@
     <Setting Name="LastSettingsFile" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="DefaultComment" Type="System.String" Scope="User">
+      <Value Profile="(Default)">--empty comment--</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

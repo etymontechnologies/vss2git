@@ -94,6 +94,8 @@
 			this.settingsSaveFileDialog = new System.Windows.Forms.SaveFileDialog();
 			this.saveSettingsButton = new System.Windows.Forms.Button();
 			this.loadSettingsButton = new System.Windows.Forms.Button();
+			this.commentTextBox = new System.Windows.Forms.TextBox();
+			this.label5 = new System.Windows.Forms.Label();
 			this.vssGroupBox.SuspendLayout();
 			this.statusStrip.SuspendLayout();
 			this.outputGroupBox.SuspendLayout();
@@ -213,7 +215,7 @@
 			// goButton
 			// 
 			this.goButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.goButton.Location = new System.Drawing.Point(416, 545);
+			this.goButton.Location = new System.Drawing.Point(416, 569);
 			this.goButton.Name = "goButton";
 			this.goButton.Size = new System.Drawing.Size(75, 23);
 			this.goButton.TabIndex = 3;
@@ -233,7 +235,7 @@
             this.revisionLabel,
             this.changeLabel,
             this.timeLabel});
-			this.statusStrip.Location = new System.Drawing.Point(0, 576);
+			this.statusStrip.Location = new System.Drawing.Point(0, 603);
 			this.statusStrip.Name = "statusStrip";
 			this.statusStrip.Size = new System.Drawing.Size(584, 22);
 			this.statusStrip.TabIndex = 5;
@@ -275,6 +277,8 @@
 			// 
 			this.outputGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.outputGroupBox.Controls.Add(this.commentTextBox);
+			this.outputGroupBox.Controls.Add(this.label5);
 			this.outputGroupBox.Controls.Add(this.outDirButton);
 			this.outputGroupBox.Controls.Add(this.resetRepoCheckBox);
 			this.outputGroupBox.Controls.Add(this.vcsSetttingsTabs);
@@ -288,7 +292,7 @@
 			this.outputGroupBox.Controls.Add(this.logLabel);
 			this.outputGroupBox.Location = new System.Drawing.Point(12, 138);
 			this.outputGroupBox.Name = "outputGroupBox";
-			this.outputGroupBox.Size = new System.Drawing.Size(560, 320);
+			this.outputGroupBox.Size = new System.Drawing.Size(560, 344);
 			this.outputGroupBox.TabIndex = 1;
 			this.outputGroupBox.TabStop = false;
 			this.outputGroupBox.Text = "Output Settings";
@@ -309,7 +313,7 @@
 			this.resetRepoCheckBox.AutoSize = true;
 			this.resetRepoCheckBox.Checked = true;
 			this.resetRepoCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.resetRepoCheckBox.Location = new System.Drawing.Point(306, 98);
+			this.resetRepoCheckBox.Location = new System.Drawing.Point(306, 131);
 			this.resetRepoCheckBox.Name = "resetRepoCheckBox";
 			this.resetRepoCheckBox.Size = new System.Drawing.Size(173, 17);
 			this.resetRepoCheckBox.TabIndex = 8;
@@ -322,7 +326,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.vcsSetttingsTabs.Controls.Add(this.tabPage1);
 			this.vcsSetttingsTabs.Controls.Add(this.tabPage2);
-			this.vcsSetttingsTabs.Location = new System.Drawing.Point(9, 154);
+			this.vcsSetttingsTabs.Location = new System.Drawing.Point(9, 179);
 			this.vcsSetttingsTabs.Name = "vcsSetttingsTabs";
 			this.vcsSetttingsTabs.SelectedIndex = 0;
 			this.vcsSetttingsTabs.Size = new System.Drawing.Size(545, 159);
@@ -513,7 +517,7 @@
 			// outKindLabel
 			// 
 			this.outKindLabel.AutoSize = true;
-			this.outKindLabel.Location = new System.Drawing.Point(6, 132);
+			this.outKindLabel.Location = new System.Drawing.Point(6, 157);
 			this.outKindLabel.Name = "outKindLabel";
 			this.outKindLabel.Size = new System.Drawing.Size(137, 13);
 			this.outKindLabel.TabIndex = 9;
@@ -524,7 +528,7 @@
 			this.transcodeCheckBox.AutoSize = true;
 			this.transcodeCheckBox.Checked = true;
 			this.transcodeCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.transcodeCheckBox.Location = new System.Drawing.Point(9, 98);
+			this.transcodeCheckBox.Location = new System.Drawing.Point(9, 131);
 			this.transcodeCheckBox.Name = "transcodeCheckBox";
 			this.transcodeCheckBox.Size = new System.Drawing.Size(209, 17);
 			this.transcodeCheckBox.TabIndex = 7;
@@ -589,7 +593,7 @@
 			// 
 			this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-			this.cancelButton.Location = new System.Drawing.Point(497, 545);
+			this.cancelButton.Location = new System.Drawing.Point(497, 569);
 			this.cancelButton.Name = "cancelButton";
 			this.cancelButton.Size = new System.Drawing.Size(75, 23);
 			this.cancelButton.TabIndex = 4;
@@ -607,7 +611,7 @@
 			this.changesetGroupBox.Controls.Add(this.label2);
 			this.changesetGroupBox.Controls.Add(this.label1);
 			this.changesetGroupBox.Controls.Add(this.anyCommentUpDown);
-			this.changesetGroupBox.Location = new System.Drawing.Point(12, 464);
+			this.changesetGroupBox.Location = new System.Drawing.Point(12, 488);
 			this.changesetGroupBox.Name = "changesetGroupBox";
 			this.changesetGroupBox.Size = new System.Drawing.Size(560, 75);
 			this.changesetGroupBox.TabIndex = 2;
@@ -698,7 +702,7 @@
 			// 
 			// saveSettingsButton
 			// 
-			this.saveSettingsButton.Location = new System.Drawing.Point(12, 545);
+			this.saveSettingsButton.Location = new System.Drawing.Point(12, 569);
 			this.saveSettingsButton.Name = "saveSettingsButton";
 			this.saveSettingsButton.Size = new System.Drawing.Size(75, 23);
 			this.saveSettingsButton.TabIndex = 6;
@@ -708,7 +712,7 @@
 			// 
 			// loadSettingsButton
 			// 
-			this.loadSettingsButton.Location = new System.Drawing.Point(93, 545);
+			this.loadSettingsButton.Location = new System.Drawing.Point(93, 569);
 			this.loadSettingsButton.Name = "loadSettingsButton";
 			this.loadSettingsButton.Size = new System.Drawing.Size(75, 23);
 			this.loadSettingsButton.TabIndex = 7;
@@ -716,13 +720,31 @@
 			this.loadSettingsButton.UseVisualStyleBackColor = true;
 			this.loadSettingsButton.Click += new System.EventHandler(this.loadSettingsButton_Click);
 			// 
+			// commentTextBox
+			// 
+			this.commentTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.commentTextBox.Location = new System.Drawing.Point(90, 98);
+			this.commentTextBox.Name = "commentTextBox";
+			this.commentTextBox.Size = new System.Drawing.Size(464, 20);
+			this.commentTextBox.TabIndex = 12;
+			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.Location = new System.Drawing.Point(6, 101);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(87, 13);
+			this.label5.TabIndex = 11;
+			this.label5.Text = "Default comment";
+			// 
 			// MainForm
 			// 
 			this.AcceptButton = this.goButton;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.CancelButton = this.cancelButton;
-			this.ClientSize = new System.Drawing.Size(584, 598);
+			this.ClientSize = new System.Drawing.Size(584, 625);
 			this.Controls.Add(this.loadSettingsButton);
 			this.Controls.Add(this.saveSettingsButton);
 			this.Controls.Add(this.changesetGroupBox);
@@ -824,6 +846,8 @@
         private System.Windows.Forms.SaveFileDialog settingsSaveFileDialog;
         private System.Windows.Forms.Button saveSettingsButton;
         private System.Windows.Forms.Button loadSettingsButton;
+		private System.Windows.Forms.TextBox commentTextBox;
+		private System.Windows.Forms.Label label5;
 
     }
 }

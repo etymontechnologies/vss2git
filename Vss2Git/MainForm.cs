@@ -125,6 +125,10 @@ namespace Hpdi.Vss2Git
                     {
                         vcsExporter.EmailDomain = domainTextBox.Text;
                     }
+					if (!string.IsNullOrEmpty(commentTextBox.Text))
+					{
+						vcsExporter.DefaultComment = commentTextBox.Text;
+					}
                     if (!transcodeCheckBox.Checked)
                     {
                         vcsExporter.CommitEncoding = encoding;
@@ -257,6 +261,20 @@ namespace Hpdi.Vss2Git
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+			if (!workQueue.IsIdle)
+			{
+				if (MessageBox.Show
+					(
+						"Vss2Git is running." + Environment.NewLine + "Are you sure to abort and exit?",
+						"Close Window",
+						MessageBoxButtons.YesNo
+					) == System.Windows.Forms.DialogResult.No)
+				{
+					e.Cancel = true;
+					return;
+				}
+			}
+
             WriteSettings();
 
             workQueue.Abort();
@@ -365,6 +383,7 @@ namespace Hpdi.Vss2Git
             outDirTextBox.Text = settings.OutDirectory;
             domainTextBox.Text = settings.DefaultEmailDomain;
             logTextBox.Text = settings.LogFile;
+			commentTextBox.Text = settings.DefaultComment;
             transcodeCheckBox.Checked = settings.TranscodeComments;
             resetRepoCheckBox.Checked = settings.ResetRepo;
             forceAnnotatedCheckBox.Checked = settings.ForceAnnotatedTags;
@@ -401,6 +420,7 @@ namespace Hpdi.Vss2Git
             settings.OutDirectory = outDirTextBox.Text;
             settings.DefaultEmailDomain = domainTextBox.Text;
             settings.LogFile = logTextBox.Text;
+			settings.DefaultComment = commentTextBox.Text;
             settings.TranscodeComments = transcodeCheckBox.Checked;
             settings.ResetRepo = resetRepoCheckBox.Checked;
             settings.ForceAnnotatedTags = forceAnnotatedCheckBox.Checked;
